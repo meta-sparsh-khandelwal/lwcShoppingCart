@@ -1,0 +1,11 @@
+<template>
+    <template if:true = {prevHistory}>
+        <c-my-order onproduct = {showProduct}></c-my-order>
+    </template>
+    <template if:true = {newPurchase}>
+        <c-product-detail oncheckout = {handleCheckOut}></c-product-detail>
+    </template>
+    <template if:true = {invoiceShow}>
+        <c-my-invoice invoice-item = {cartProducts} onplace= {handleOnPlace}></c-my-invoice>
+    </template>
+</template>

@@ -1,0 +1,26 @@
+<template>
+    <div>
+    <lightning-card title = "Products" icon-name = "custom:custom63"> 
+        <lightning-layout class='slds-grid_align-space'>
+            <lightning-layout-item flexibility="auto"  padding="around-small" >
+                <lightning-input type = "search" onchange = {handleKeyChange} class = "slds-m-bottom_small" style="width:500px;">
+                </lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item flexibility="auto"  padding="around-small" style="padding-top:30px;">
+                <lightning-button variant="brand" label="Add To Cart" onclick = {handleAddToCart} title="Primary action" class="slds-m-left_x-small"></lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+
+    <div if:true = {products}>
+        <c-custom-data-table columns = {columns} hide-check-box = {hideCheckBox}  show-row-num-col = {showRowNumCol} records = {products} pre-selected-rows = {preSelectedRecord} page-number = {pageNumber} onchange = {handleOnChange}></c-custom-data-table>
+    </div>
+    <div if:false = {products}>
+        <p>Loading....</p>
+    </div>
+    </lightning-card>
+    </div>
+    <div if:true = {showCart} style="margin-top:100px;"> 
+        <c-my-cart product = {cartProducts} onchangecart= {handleChangeCart} ondelete= {handleDelete} oncheckout= {handleCheckOut}></c-my-cart>
+    </div>
+    
+</template>

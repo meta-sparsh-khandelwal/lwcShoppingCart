@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title = "My Cart" icon-name = "custom:custom63"> 
+        <div class = "slds-var-m-around_medium"> 
+            <template if:true = {product}> 
+                <lightning-layout>
+                    <lightning-layout-item flexibility="auto" padding="around-small" style="padding-top:30px;">
+                        <lightning-button variant="brand" label="Check Out" onclick = {handleCheckOut} title="Primary action" class="slds-m-left_x-small"></lightning-button>
+                    </lightning-layout-item>
+                </lightning-layout>
+                <c-custom-data-table columns = {columns} records = {product} hide-check-box = {hideCheckBox} onsave= {handleSave} page-number= {pageNumber} ondelete= {handleDeleteRecord}></c-custom-data-table>               
+            </template>
+            <template if:false = {product}>
+                <h2>Loading...</h2>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title = "My Orders" icon-name = "custom:custom63"> 
+        <div class = "slds-var-m-around_medium"> 
+            <lightning-layout>
+                <lightning-layout-item>
+                    <lightning-button variant="brand-outline" label="Add New Purchase Order" onclick = {showProduct} class="slds-m-left_x-small" ></lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+            <div if:true = {purchaseOrder} class="slds-m-top_medium"> 
+                <c-custom-data-table records = {record} columns = {columns} page-number = {pageNumber} sort-by= {sortBy} sort-direction= {sortDirection}></c-custom-data-table>               
+            </div>
+            <div if:false = {purchaseOrder}>
+                <h2>No Purchase History</h2>
+            </div>
+        </div>
+
+    </lightning-card>
+</template>

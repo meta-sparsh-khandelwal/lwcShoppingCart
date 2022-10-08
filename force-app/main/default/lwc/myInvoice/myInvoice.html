@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title = "Invoice" icon-name = "custom:custom63"> 
+        <lightning-layout class='slds-grid_align-space'>
+            <lightning-layout-item >
+                Invoice No: #{invoiceNumber}
+            </lightning-layout-item>
+            <lightning-layout-item>
+                Order Date: {todayDate}
+            </lightning-layout-item>
+        </lightning-layout>
+        <div class = "slds-var-m-around_medium"> 
+            <c-custom-data-table columns = {columns} records = {item} hide-check-box = {hideCheckBox} page-number= {pageNumber}></c-custom-data-table>
+        </div> 
+        <lightning-layout class="slds-grid_align-center">
+            <lightning-layout-item>
+                <lightning-button variant="brand-outline" label="Place Order" onclick= {handleOnPlace}></lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>  
+</template>
