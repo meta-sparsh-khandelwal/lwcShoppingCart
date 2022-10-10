@@ -68,25 +68,7 @@ export default class ProductDetail extends LightningElement {
         });
         this.products=[...this.products];
         this.pageNumber=1;
-        /**const productName=event.target.value;
-        if(productName){
-            getProductByName({name:productName})
-            .then(result=>{
-                console.log(result);
-                this.products=result;
-                this.pageNumber=1;
-            })
-            .catch(error=>{console.log(error)})
-        }
-        else{
-            getAllProduct()
-            .then(result=>{
-                console.log(result);
-                this.products=result;
-                this.pageNumber=1;
-            })
-            .catch(error=>{console.log(error)});
-        }**/
+        
     }
     handleAddToCart(){ 
         if(this.preSelectedRecord.length==0){
