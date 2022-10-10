@@ -38,7 +38,7 @@ export default class MyInvoice extends LightningElement {
     }
 
     handleOnPlace(){
-        // this.dispatchEvent(new CustomEvent('place',{detail:this._items}));
+        this.dispatchEvent(new CustomEvent('place',{detail:this._items}));
     }
 
 
