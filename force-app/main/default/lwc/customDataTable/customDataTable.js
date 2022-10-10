@@ -161,10 +161,5 @@ export default class CustomDataTable extends LightningElement {
         });
         this._records=parseData;
         this.paginationHelper();
-        /**this.sortBy = event.detail.fieldName;
-        event.preventDefault();
-        console.log(event.detail.fieldName);
-        console.log( event.detail.sortDirection);
-        this.dispatchEvent(new CustomEvent('sort',{detail:{fieldName:event.detail.fieldName,sortDirection:event.detail.sortDirection}}));**/
     }
 }
